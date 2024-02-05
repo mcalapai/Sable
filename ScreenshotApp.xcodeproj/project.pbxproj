@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D24CE3082B6F2D2000EDD413 /* ErrorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24CE3072B6F2D2000EDD413 /* ErrorModels.swift */; };
+		D24CE30A2B6F7AB700EDD413 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24CE3092B6F7AB700EDD413 /* PromptModel.swift */; };
 		D29E26902B6DDBF400E0FCFF /* ScreenshotAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E268F2B6DDBF400E0FCFF /* ScreenshotAppApp.swift */; };
 		D29E26922B6DDBF400E0FCFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26912B6DDBF400E0FCFF /* ContentView.swift */; };
 		D29E26942B6DDBF500E0FCFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29E26932B6DDBF500E0FCFF /* Assets.xcassets */; };
@@ -14,6 +16,15 @@
 		D29E26A22B6DDBF500E0FCFF /* ScreenshotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26A12B6DDBF500E0FCFF /* ScreenshotAppTests.swift */; };
 		D29E26AC2B6DDBF500E0FCFF /* ScreenshotAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26AB2B6DDBF500E0FCFF /* ScreenshotAppUITests.swift */; };
 		D29E26AE2B6DDBF500E0FCFF /* ScreenshotAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26AD2B6DDBF500E0FCFF /* ScreenshotAppUITestsLaunchTests.swift */; };
+		D29E26BB2B6DDC0600E0FCFF /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26BA2B6DDC0600E0FCFF /* PopupView.swift */; };
+		D29E26BD2B6DDC1E00E0FCFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26BC2B6DDC1E00E0FCFF /* AppDelegate.swift */; };
+		D29E26BF2B6DF01900E0FCFF /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E26BE2B6DF01900E0FCFF /* WindowManager.swift */; };
+		D2A699B72B6E200F0034587B /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A699B62B6E200F0034587B /* SelectionView.swift */; };
+		D2A699B92B6E220B0034587B /* SelectionViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A699B82B6E220B0034587B /* SelectionViewRepresentable.swift */; };
+		D2A699BC2B6E39810034587B /* ScreenCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A699BB2B6E39810034587B /* ScreenCaptureManager.swift */; };
+		D2A699C42B6EE3530034587B /* ImageRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A699C32B6EE3530034587B /* ImageRequestModel.swift */; };
+		D2A699C62B6EE8080034587B /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A699C52B6EE8080034587B /* ImageRequest.swift */; };
+		D2A699C82B6EFE280034587B /* ImageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A699C72B6EFE280034587B /* ImageResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D24CE3072B6F2D2000EDD413 /* ErrorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModels.swift; sourceTree = "<group>"; };
+		D24CE3092B6F7AB700EDD413 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
 		D29E268C2B6DDBF400E0FCFF /* ScreenshotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenshotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29E268F2B6DDBF400E0FCFF /* ScreenshotAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotAppApp.swift; sourceTree = "<group>"; };
 		D29E26912B6DDBF400E0FCFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +58,15 @@
 		D29E26A72B6DDBF500E0FCFF /* ScreenshotAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScreenshotAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29E26AB2B6DDBF500E0FCFF /* ScreenshotAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotAppUITests.swift; sourceTree = "<group>"; };
 		D29E26AD2B6DDBF500E0FCFF /* ScreenshotAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D29E26BA2B6DDC0600E0FCFF /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		D29E26BC2B6DDC1E00E0FCFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D29E26BE2B6DF01900E0FCFF /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		D2A699B62B6E200F0034587B /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		D2A699B82B6E220B0034587B /* SelectionViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewRepresentable.swift; sourceTree = "<group>"; };
+		D2A699BB2B6E39810034587B /* ScreenCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCaptureManager.swift; sourceTree = "<group>"; };
+		D2A699C32B6EE3530034587B /* ImageRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestModel.swift; sourceTree = "<group>"; };
+		D2A699C52B6EE8080034587B /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		D2A699C72B6EFE280034587B /* ImageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +117,17 @@
 		D29E268E2B6DDBF400E0FCFF /* ScreenshotApp */ = {
 			isa = PBXGroup;
 			children = (
+				D2A699C22B6EE33F0034587B /* Models */,
+				D2A699C12B6EE3370034587B /* Networking */,
+				D2A699BD2B6ECA870034587B /* Tools */,
 				D29E268F2B6DDBF400E0FCFF /* ScreenshotAppApp.swift */,
 				D29E26912B6DDBF400E0FCFF /* ContentView.swift */,
 				D29E26932B6DDBF500E0FCFF /* Assets.xcassets */,
 				D29E26982B6DDBF500E0FCFF /* ScreenshotApp.entitlements */,
 				D29E26952B6DDBF500E0FCFF /* Preview Content */,
+				D29E26BA2B6DDC0600E0FCFF /* PopupView.swift */,
+				D29E26BC2B6DDC1E00E0FCFF /* AppDelegate.swift */,
+				D29E26BE2B6DF01900E0FCFF /* WindowManager.swift */,
 			);
 			path = ScreenshotApp;
 			sourceTree = "<group>";
@@ -127,6 +155,51 @@
 				D29E26AD2B6DDBF500E0FCFF /* ScreenshotAppUITestsLaunchTests.swift */,
 			);
 			path = ScreenshotAppUITests;
+			sourceTree = "<group>";
+		};
+		D2A699BA2B6E395D0034587B /* Screenshot */ = {
+			isa = PBXGroup;
+			children = (
+				D2A699B62B6E200F0034587B /* SelectionView.swift */,
+				D2A699B82B6E220B0034587B /* SelectionViewRepresentable.swift */,
+				D2A699BB2B6E39810034587B /* ScreenCaptureManager.swift */,
+			);
+			path = Screenshot;
+			sourceTree = "<group>";
+		};
+		D2A699BD2B6ECA870034587B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D2A699BE2B6ECA930034587B /* CoreML */,
+				D2A699BA2B6E395D0034587B /* Screenshot */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D2A699BE2B6ECA930034587B /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreML;
+			sourceTree = "<group>";
+		};
+		D2A699C12B6EE3370034587B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D2A699C52B6EE8080034587B /* ImageRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D2A699C22B6EE33F0034587B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2A699C32B6EE3530034587B /* ImageRequestModel.swift */,
+				D2A699C72B6EFE280034587B /* ImageResponseModel.swift */,
+				D24CE3072B6F2D2000EDD413 /* ErrorModels.swift */,
+				D24CE3092B6F7AB700EDD413 /* PromptModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +332,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29E26BD2B6DDC1E00E0FCFF /* AppDelegate.swift in Sources */,
+				D29E26BB2B6DDC0600E0FCFF /* PopupView.swift in Sources */,
+				D24CE30A2B6F7AB700EDD413 /* PromptModel.swift in Sources */,
 				D29E26922B6DDBF400E0FCFF /* ContentView.swift in Sources */,
 				D29E26902B6DDBF400E0FCFF /* ScreenshotAppApp.swift in Sources */,
+				D2A699BC2B6E39810034587B /* ScreenCaptureManager.swift in Sources */,
+				D29E26BF2B6DF01900E0FCFF /* WindowManager.swift in Sources */,
+				D24CE3082B6F2D2000EDD413 /* ErrorModels.swift in Sources */,
+				D2A699B72B6E200F0034587B /* SelectionView.swift in Sources */,
+				D2A699C82B6EFE280034587B /* ImageResponseModel.swift in Sources */,
+				D2A699B92B6E220B0034587B /* SelectionViewRepresentable.swift in Sources */,
+				D2A699C42B6EE3530034587B /* ImageRequestModel.swift in Sources */,
+				D2A699C62B6EE8080034587B /* ImageRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

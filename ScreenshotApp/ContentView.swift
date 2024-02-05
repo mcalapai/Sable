@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var windowManager = WindowManager.shared
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            if windowManager.isScreenshotting {
+                SelectionViewRepresentable()
+            } else {
+                PopupView()
+            }
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.5)) // semi-transparent
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
