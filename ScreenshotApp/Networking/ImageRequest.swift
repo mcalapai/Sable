@@ -47,10 +47,11 @@ class ImageRequest {
             ])
         ], maxTokens: 1000)
         
+        let openAIKey = AppConfig.shared.openAIKey
         var request = URLRequest(url: self.endpoint)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer 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", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(openAIKey)", forHTTPHeaderField: "Authorization")
         
         do {
             request.httpBody = try JSONEncoder().encode(reqObject)

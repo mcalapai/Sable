@@ -20,13 +20,16 @@ class ScreenCaptureManager {
                   let display = content.displays.first(where: { $0.displayID == mainDisplayID }) else { return }
             
             print("Capture origin: \(captureRect.origin)")
-            print("Capture final: \(captureRect.minX), \(captureRect.minY)")
+            print("Capture final calc: (\(captureRect.origin.x + captureRect.width), \(captureRect.origin.y - captureRect.height))")
+            
+            let originY = 981 - captureRect.origin.y
+            let adjRect = NSRect(x: captureRect.origin.x, y: originY, width: captureRect.width, height: captureRect.height)
             
             let streamConfig = SCStreamConfiguration()
             streamConfig.captureResolution = .automatic
-            streamConfig.sourceRect = captureRect
-            streamConfig.height = Int(captureRect.height)*2
-            streamConfig.width = Int(captureRect.width)*2
+            streamConfig.sourceRect = adjRect
+            //streamConfig.height = Int(captureRect.height)*2
+            //streamConfig.width = Int(captureRect.width)*2
             streamConfig.preservesAspectRatio = true
             streamConfig.scalesToFit = true
             streamConfig.capturesAudio = false
