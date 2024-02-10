@@ -8,10 +8,11 @@
 import Foundation
 import Cocoa
 
-class ImageRequest {
+class ImageRequest: ObservableObject {
     var endpoint: URL
     var image: NSImage
     var prompt: String
+    //@Published var imageReqResponse: String = ""
     
     init(image: NSImage, prompt: String) {
         self.endpoint = URL(string: "https://api.openai.com/v1/chat/completions")!
@@ -35,7 +36,7 @@ class ImageRequest {
         return base64String
     }
     
-    func performPostRequest() throws {
+    func performPostRequest() async throws -> String {
         //guard self.image == nil else { return }i
         
         guard let b64Image = encodeImage(image: self.image) else { throw ImageErrors.ImageNotEncoded }
@@ -58,30 +59,31 @@ class ImageRequest {
             // add params to body
         } catch {
             print("Error: \(error)")
-            return
+            return ""
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error: \(error?.localizedDescription ?? "Unknown error")")
-                return
+        return try await withCheckedThrowingContinuation { continuation in
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    continuation.resume(throwing: error ?? URLError(.badServerResponse))
+                    return
+                }
+
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    continuation.resume(throwing: URLError(.badServerResponse))
+                    return
+                }
+                
+                do {
+                    let responseObject = try JSONDecoder().decode(ImageResponseModel.self, from: data)
+                    // Use the relevant field of your decoded model. For instance, if you're returning an image URL:
+                    continuation.resume(returning: responseObject.choices.first?.message.content ?? "Error")
+                } catch {
+                    continuation.resume(throwing: error)
+                }
             }
             
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                // Handle successful response
-                do {
-                    // Assuming you want to parse the JSON response
-                    let responseObject = try JSONDecoder().decode(ImageResponseModel.self, from: data)
-                    print("Response: \(responseObject)")
-                } catch {
-                    print("Failed to decode response: \(error)")
-                }
-            } else {
-                // Handle server errors or other status codes
-                print("Server returned an error")
-            }
+            task.resume()
         }
-
-        task.resume()
     }
 }

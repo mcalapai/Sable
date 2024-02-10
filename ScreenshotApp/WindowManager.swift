@@ -20,6 +20,7 @@ class WindowManager: NSObject, NSWindowDelegate, ObservableObject {
     //var currentPrompt: String?
     
     @Published var isScreenshotting: Bool
+    //@Published var modelResponse: String = ""
     var isOverlayOpen: Bool?
     var overlayWindow:KeyableWindow?
     

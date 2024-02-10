@@ -86,6 +86,9 @@ class SelectionView: NSView {
             
             // set is screenshotting to false
             windowManager.isScreenshotting = false
+            
+            // return response
+            //windowManager.modelResponse = captureManager.apiResponse
         }
     }
 }

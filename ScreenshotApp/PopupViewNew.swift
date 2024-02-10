@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PopupView: View {
+struct PopupViewNew: View {
     @State private var cmdText: String = ""
     @StateObject private var promptModel = PromptModel.shared
     @FocusState private var isFocused: Bool

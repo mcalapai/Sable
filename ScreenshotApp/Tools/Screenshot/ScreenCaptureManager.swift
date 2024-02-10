@@ -3,6 +3,7 @@ import ScreenCaptureKit
 class ScreenCaptureManager {
     private var captureSession: SCStream? // mutable
     private let captureRect: CGRect // immutable
+    @Published var apiResponse: String = ""
     //var prompt: String
     //let imageRequestor: ImageRequest
     
@@ -14,7 +15,7 @@ class ScreenCaptureManager {
     
     @objc func takeScreenshot() async {
         do {
-            print("Capturing screen")
+            let reqHandler = RequestHandler.shared
             let content = try await SCShareableContent.excludingDesktopWindows(false, onScreenWindowsOnly: false)
             guard let mainDisplayID = NSScreen.main?.deviceDescription[NSDeviceDescriptionKey("NSScreenNumber")] as? CGDirectDisplayID,
                   let display = content.displays.first(where: { $0.displayID == mainDisplayID }) else { return }
@@ -42,24 +43,11 @@ class ScreenCaptureManager {
             
             let path = "/Users/matthewcalapai/Downloads/image.png"
             saveNSImageToFile(image: nsImage, atPath: path)
-            makeImageRequest(image: nsImage)
+            
+            reqHandler.makeImageRequest(image: nsImage)
+            
         } catch {
             print("Error capturing screen \(error)")
-        }
-    }
-    
-    func makeImageRequest(image: NSImage) {
-        // create api client
-        let promptModel = PromptModel.shared
-        print("Current prompt is \(promptModel.currentPrompt)")
-        let imageReq = ImageRequest(image: image, prompt: promptModel.currentPrompt)//, prompt: self.prompt)
-        
-        do {
-            try imageReq.performPostRequest()
-        } catch ImageErrors.ImageNotEncoded {
-            print("Image not encoded")
-        } catch {
-            print("Unknown error")
         }
     }
     

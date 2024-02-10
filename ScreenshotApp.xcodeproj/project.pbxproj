@@ -28,6 +28,8 @@
 		D2BF909A2B76B5C40093833A /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2BF90992B76B5C40093833A /* Keys.plist */; };
 		D2BF909C2B76B6280093833A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D2BF909B2B76B6280093833A /* .gitignore */; };
 		D2BF909E2B76B7240093833A /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BF909D2B76B7240093833A /* AppConfig.swift */; };
+		D2BF90A02B76F5370093833A /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BF909F2B76F5370093833A /* RequestHandler.swift */; };
+		D2BF90A22B76FE640093833A /* PopupViewNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BF90A12B76FE640093833A /* PopupViewNew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		D2BF90992B76B5C40093833A /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		D2BF909B2B76B6280093833A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D2BF909D2B76B7240093833A /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		D2BF909F2B76F5370093833A /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		D2BF90A12B76FE640093833A /* PopupViewNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewNew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				D29E26BA2B6DDC0600E0FCFF /* PopupView.swift */,
 				D29E26BC2B6DDC1E00E0FCFF /* AppDelegate.swift */,
 				D29E26BE2B6DF01900E0FCFF /* WindowManager.swift */,
+				D2BF90A12B76FE640093833A /* PopupViewNew.swift */,
 			);
 			path = ScreenshotApp;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A699C52B6EE8080034587B /* ImageRequest.swift */,
+				D2BF909F2B76F5370093833A /* RequestHandler.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -357,11 +363,13 @@
 				D2BF909E2B76B7240093833A /* AppConfig.swift in Sources */,
 				D29E26922B6DDBF400E0FCFF /* ContentView.swift in Sources */,
 				D29E26902B6DDBF400E0FCFF /* ScreenshotAppApp.swift in Sources */,
+				D2BF90A22B76FE640093833A /* PopupViewNew.swift in Sources */,
 				D2A699BC2B6E39810034587B /* ScreenCaptureManager.swift in Sources */,
 				D29E26BF2B6DF01900E0FCFF /* WindowManager.swift in Sources */,
 				D24CE3082B6F2D2000EDD413 /* ErrorModels.swift in Sources */,
 				D2A699B72B6E200F0034587B /* SelectionView.swift in Sources */,
 				D2A699C82B6EFE280034587B /* ImageResponseModel.swift in Sources */,
+				D2BF90A02B76F5370093833A /* RequestHandler.swift in Sources */,
 				D2A699B92B6E220B0034587B /* SelectionViewRepresentable.swift in Sources */,
 				D2A699C42B6EE3530034587B /* ImageRequestModel.swift in Sources */,
 				D2A699C62B6EE8080034587B /* ImageRequest.swift in Sources */,
