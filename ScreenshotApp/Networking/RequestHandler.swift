@@ -10,6 +10,8 @@ import Cocoa
 
 class RequestHandler: ObservableObject {
     static let shared = RequestHandler()
+    @Published var currentPrompt: String = ""
+    @Published var isResponseLoading: Bool = false
     
     @Published var apiResponse: String = ""
     let image: NSImage?
@@ -20,16 +22,19 @@ class RequestHandler: ObservableObject {
     
     func makeImageRequest(image: NSImage) {
         // create api client
-        let promptModel = PromptModel.shared
-        print("Current prompt is \(promptModel.currentPrompt)")
-        let imageReq = ImageRequest(image: image, prompt: promptModel.currentPrompt)//, prompt: self.prompt)
-        
+        //let promptModel = PromptModel.shared
+        print("Current prompt is \(currentPrompt)")
+        let imageReq = ImageRequest(image: image, prompt: currentPrompt)//, prompt: self.prompt)
         
         Task {
+            self.isResponseLoading = true
             do {
-                self.apiResponse = try await imageReq.performPostRequest()
-                print("API Response: \(self.apiResponse)")
-                // Update your UI or state with the obtained URL
+                let apiResponse = try await imageReq.performPostRequest()
+                DispatchQueue.main.async {
+                    self.apiResponse = apiResponse
+                    self.isResponseLoading = false
+                    print("API Response: \(self.apiResponse)")
+                }
             } catch {
                 print("Failed to fetch: \(error.localizedDescription)")
                 // Handle errors appropriately

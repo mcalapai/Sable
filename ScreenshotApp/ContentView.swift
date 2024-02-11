@@ -19,7 +19,7 @@ struct ContentView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black.opacity(0.5)) // semi-transparent
+        .background(Color.black.opacity(0.01)) // semi-transparent
     }
 }
 

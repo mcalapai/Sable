@@ -10,7 +10,6 @@ import SwiftUI
 struct SelectionViewRepresentable: NSViewRepresentable {
     // create and return an instance of the selectionview
     func makeNSView(context: Context) -> SelectionView {
-        print("init")
         return SelectionView()
     }
     

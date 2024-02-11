@@ -23,6 +23,7 @@ class WindowManager: NSObject, NSWindowDelegate, ObservableObject {
     //@Published var modelResponse: String = ""
     var isOverlayOpen: Bool?
     var overlayWindow:KeyableWindow?
+    @ObservedObject var requestHandler = RequestHandler.shared
     
     // stylemask specifies the border of the window
     // backing specifies how the content is buffered
@@ -63,6 +64,8 @@ class WindowManager: NSObject, NSWindowDelegate, ObservableObject {
         if let window = overlayWindow {
             if window.isVisible {
                 window.orderOut(nil)
+                // reset api response
+                requestHandler.apiResponse = ""
             } else {
                 window.makeKeyAndOrderFront(nil)
             }
